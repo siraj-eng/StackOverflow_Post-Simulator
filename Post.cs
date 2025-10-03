@@ -38,7 +38,10 @@ namespace StackOverflow_Post_Simulator
         //display
         public void Display()
         {
-            Console.WriteLine($"{Title} | {Description} | {DateCreated} | {VoteCount})";
+            Console.WriteLine($"\n{Title}");
+            Console.WriteLine($"\n{Description}");
+            Console.WriteLine($"\n{DateCreated.ToShortTimeString}");
+            Console.WriteLine($"\n{VoteCount}");
         }
         
     }

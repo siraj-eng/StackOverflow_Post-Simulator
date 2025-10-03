@@ -10,16 +10,20 @@ namespace StackOverflowPostSimulator
         {
             var posts = new List<PostClass>();
 
-            var post = new PostClass("Test", "I have a test tomorrow");
-            posts.Add(post);
-            
-            //upvote
-            post.Upvote();
-            Console.WriteLine("Post upvoted successfully. Votes: " + post.VoteCount);
+            //Added post 1
+            var post1 = new PostClass("Test", "I have a test tomorrow");
+            posts.Add(post1);
 
-            //Downvote
-            post.Downvote();
-            Console.WriteLine("Post downvoted successfully. Votes " +post.VoteCount);   
+            var post2 = new PostClass("Error", "Make the error grow");
+            posts.Add(post2);
+
+
+            //display
+            for (int i = 0; i < posts.Count; i++)
+            {
+                Console.WriteLine("Post Display Loading.....!");
+                Console.WriteLine("Post Display Loaded");
+            }
         }
     }
 }
