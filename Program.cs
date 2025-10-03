@@ -8,26 +8,18 @@ namespace StackOverflowPostSimulator
         //Main Method 
         static void Main(string[] args)
         {
-            //Created a post from the postclass
-            var post = new PostClass();
-            post._title = "Test";
-            post._description = "I have test tomorrow";
-            post._dateCreated = DateTime.Now;
-            
-            //Adding of the list'
-            Posts.Add(post);
-             
-            //Upvoting Logic
-            if (post.Upvote())
-                post._countValue++;
-            Console.WriteLine("Post upvoted Successfully" +countValue);
+            var posts = new List<PostClass>();
 
-            //Downvoting logic
-            if(post.Downvote())
-                post.Downvote();
-            post._countValue--;
-            Console.WriteLine("post downvoted successfully" + _countvalue);
-    
+            var post = new PostClass("Test", "I have a test tomorrow");
+            posts.Add(post);
+            
+            //upvote
+            post.Upvote();
+            Console.WriteLine("Post upvoted successfully. Votes: " + post.VoteCount);
+
+            //Downvote
+            post.Downvote();
+            Console.WriteLine("Post downvoted successfully. Votes " +post.VoteCount);   
         }
     }
 }
