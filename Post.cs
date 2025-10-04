@@ -37,7 +37,7 @@ namespace StackOverflow_Post_Simulator
         }
 
         //Add Answer
-        public void AddAnswer()
+        public void AddAnswer(string answerText)
         {
             Answers.Add(new AnswerClass(answerText));    
         }
@@ -65,7 +65,7 @@ namespace StackOverflow_Post_Simulator
         public string AnswerText { get; private set; }
         public DateTime DateCreated { get; private set; }
 
-        public AnswerClass() 
+        public AnswerClass(string answerText) 
         {
             AnswerText = answerText;
             DateCreated = DateTime.Now;
