@@ -31,11 +31,6 @@ namespace StackOverflow_Post_Simulator
         }
 
         //downvote
-        public void Downvote()
-        {
-            VoteCount--;
-        }
-
         //Add Answer
         public void AddAnswer(string answerText)
         {
@@ -64,12 +59,26 @@ namespace StackOverflow_Post_Simulator
     {
         public string AnswerText { get; private set; }
         public DateTime DateCreated { get; private set; }
+        public int VoteCount { get; private set; }
 
         public AnswerClass(string answerText) 
         {
             AnswerText = answerText;
             DateCreated = DateTime.Now;
+            VoteCount = 0;
 
+        }
+
+        //vote 
+        public void upvote()
+        {
+            VoteCount++;
+            
+        }
+
+        public void downvote()
+        {
+            VoteCount--;
         }
 
         public void Display()
