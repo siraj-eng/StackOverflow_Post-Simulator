@@ -1,52 +1,42 @@
 ﻿using StackOverflow_Post_Simulator;
 using System;
+using System.Collections.Generic;
 
 namespace StackOverflowPostSimulator
 {
-    class program
+    class Program
     {
-        //Main Method 
         static void Main(string[] args)
         {
             var posts = new List<PostClass>();
 
-            //Get post title from user
-            Console.Write("Enter the post Title");
-            string title1 = Console.ReadLine();
+            // Create a post
+            Console.Write("Enter the post Title: ");
+            string title = Console.ReadLine();
 
-            //Get the post Description
-            Console.WriteLine("Enter the post Description");
-            string description1 = Console.ReadLine();
+            Console.Write("Enter the post Description: ");
+            string description = Console.ReadLine();
 
-            var post1 = new PostClass(title1, description1);
-            posts.Add(post1);
+            var post = new PostClass(title, description);
+            posts.Add(post);
 
-            Console.Write("Answer the post Question");
-            string Answer = Console.ReadLine();
+            // Answer the post
+            Console.Write("Enter an Answer: ");
+            string answer = Console.ReadLine();
+            post.AddAnswer(answer);
 
-            var post2 = new PostClass(Answer); //Object initialization -- feature
-            post2.AddAnswer();
-            posts.Add(post2);
-
-            Console.Write("Do you want to upvote or downvote (u/d)");
+            // Vote
+            Console.Write("Do you want to upvote or downvote (u/d): ");
             string result = Console.ReadLine();
 
             if (result.ToLower() == "u")
-            {
-                post1.Upvote();
-                Console.WriteLine("Post1 upvoted" + post1.VoteCount);
-
-            }
+                post.Upvote();
             else
-            {
-                post1.Downvote();
-                Console.WriteLine("Post1 Downvoted" + post1.VoteCount);
-            }
+                post.Downvote();
 
-            //Display
-            for (int i = 0; i < posts.Count; i++) 
+            // Display
+            foreach (var p in posts)
             {
-                var p = posts[i];
                 p.Display();
             }
         }
