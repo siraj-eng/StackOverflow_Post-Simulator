@@ -31,6 +31,12 @@ namespace StackOverflow_Post_Simulator
         }
 
         //downvote
+        public void Downvote()
+        {
+            VoteCount++;
+        }
+
+
         //Add Answer
         public void AddAnswer(string answerText)
         {
@@ -70,13 +76,13 @@ namespace StackOverflow_Post_Simulator
         }
 
         //vote 
-        public void upvote()
+        public void Answerupvote()
         {
             VoteCount++;
             
         }
 
-        public void downvote()
+        public void Answerdownvote()
         {
             VoteCount--;
         }
